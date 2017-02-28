@@ -1,6 +1,6 @@
 
-SELECT  P.Id, REPLACE(REPLACE(REPLACE(P.Title, ',', ';'), CHAR(13), ' '), CHAR(10), ' ') AS Title, 
-	REPLACE(REPLACE(REPLACE(P.Objective, ',', ';'), CHAR(13), ' '), CHAR(10), ' ') AS Objective, 
+SELECT  P.Id, REPLACE(REPLACE(REPLACE(REPLACE(P.Title, ',', ';'),CHAR(9), ' '), CHAR(13), ' '), CHAR(10), ' ') AS Title, 
+	REPLACE(REPLACE(REPLACE(REPLACE(P.Objective, ',', ';'), CHAR(9), ' '), CHAR(13), ' '), CHAR(10), ' ') AS Objective, 
 	CASE WHEN P.Title = P.Objective  THEN 1 ELSE 0 END AS IsTitleEqualsDesc,
 	F.FundSourceName + ' (' + F.Acronym + ')' AS ManagingDP,
 	P.IsUnderADP, P.DPAssistance, P.DPAssistanceCurrencyId, P.DPAssistanceUSD, P.FundSourceId, 
